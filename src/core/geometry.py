@@ -7,9 +7,9 @@ Geometry-related functions for corridor creation and point-in-polygon checks.
 import math
 from typing import Optional
 import numpy as np
-import shapely.ops
+from shapely.geometry import Polygon, Point
 from shapely import ops as shapely_ops
-import shapely.ops
+from pyproj import CRS, Transformer
 
 
 def transform_polygon(polygon: Polygon, source_crs: CRS, target_crs: CRS) -> Polygon:

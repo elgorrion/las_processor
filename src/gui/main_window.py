@@ -21,8 +21,10 @@ from typing import List, Optional
 
 # Assuming these are in your repo under src/core and src/utils
 # Adjust relative imports to match your package structure
-from ...core.processing import process_corridor, convert_las_to_txt
-from ...utils.validators import validate_inputs, validate_epsg_code
+from ..core.file_operations import download_files_from_network, convert_las_to_txt
+from ..core.file_operations import convert_las_to_txt
+from ..core.processing import process_corridor
+from ..utils.validators import validate_inputs, validate_epsg_code
 
 # Import the custom QueueHandler defined in logging_handler.py
 from .logging_handler import QueueHandler

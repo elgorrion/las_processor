@@ -8,9 +8,8 @@ import math
 from typing import Optional
 import numpy as np
 import shapely.ops
-from shapely.geometry import Polygon, Point
 from shapely import ops as shapely_ops
-from pyproj import CRS, Transformer
+import shapely.ops
 
 
 def transform_polygon(polygon: Polygon, source_crs: CRS, target_crs: CRS) -> Polygon:
@@ -28,7 +27,6 @@ def transform_polygon(polygon: Polygon, source_crs: CRS, target_crs: CRS) -> Pol
     if not source_crs.equals(target_crs):
         transformer = Transformer.from_crs(source_crs, target_crs, always_xy=True)
         return shapely_ops.transform(transformer.transform, polygon)
-    return polygon
 
 
 def calculate_corridor_polygon(
